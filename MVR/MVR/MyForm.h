@@ -739,7 +739,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 	}
 
 	//Метод верхней релаксации
-	double temp, prev, currentEps;
+	double tmp, prev, currentEps;
 	double Eps_max, Eps_max2;
 	double w = 1.99;
 	while (true)
@@ -750,8 +750,8 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 			for (int i = 1; i < n; i++)
 			{
 				prev = v[j][i];
-				temp = A * prev + h2 * (v[j][i - 1] + v[j][i + 1]) + k2 * (v[j - 1][i] + v[j + 1][i]);
-				v[j][i] = prev - w * (temp + F(x[i], y[i])) / A;
+				tmp = A * prev + h2 * (v[j][i - 1] + v[j][i + 1]) + k2 * (v[j - 1][i] + v[j + 1][i]);
+				v[j][i] = prev - w * (tmp + F(x[i], y[i])) / A;
 
 				currentEps = std::fabs(v[j][i] - prev);
 				if (currentEps > Eps_max)
@@ -764,13 +764,13 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 			break;
 	}
 	//Вычисление невяки
-	temp = 0.0;
+	tmp = 0.0;
 	for (int j = 1; j < m; j++)
 	{
 		for (int i = 1; i < n; i++)
 		{
-			temp = A * v[j][i] + h2 * (v[j][i - 1] + v[j][i + 1]) + k2 * (v[j - 1][i] + v[j + 1][i]) + F(x[i], y[i]);
-			maxR1 += temp * temp;
+			tmp = A * v[j][i] + h2 * (v[j][i - 1] + v[j][i + 1]) + k2 * (v[j - 1][i] + v[j + 1][i]) + F(x[i], y[i]);
+			maxR1 += tmp * tmp;
 		}
 	}
 	maxR1 = std::sqrt(maxR1);
@@ -811,6 +811,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 			R[0][j] = 0.0;
 			R[n][j] = 0.0;
 		}
+		MaxF2 = 0;
 		for (int j = 0; j <= m; j++)            
 		{
 			for (int i = 0; i <= n; i++)
@@ -828,7 +829,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 			}
 		}
 
-		temp = 0.0;
+		tmp = 0.0;
 		prev = 0.0;
 		currentEps = 0.0;
 		w = 1.99;
@@ -840,8 +841,8 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 				for (int i = 1; i < n; i++)
 				{
 					prev = v2[j][i];
-					temp = A * prev + h2 * (v2[j][i - 1] + v2[j][i + 1]) + k2 * (v2[j - 1][i] + v2[j + 1][i]);
-					v2[j][i] = prev - w * (temp + F(x[i], y[i])) / A;
+					tmp = A * prev + h2 * (v2[j][i - 1] + v2[j][i + 1]) + k2 * (v2[j - 1][i] + v2[j + 1][i]);
+					v2[j][i] = prev - w * (tmp + F(x[i], y[i])) / A;
 					currentEps = std::fabs(v2[j][i] - prev);
 					if (currentEps > Eps_max2)
 						Eps_max2 = currentEps;
@@ -852,13 +853,16 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 			if ((Eps_max2 < Eps) || (p2 > N_max))
 				break;
 		}
-		temp = 0.0;
+
+		tmp = 0.0;
 		for (int j = 1; j < m; j++)
 		{
 			for (int i = 1; i < n; i++)
 			{
-				temp = A * v2[j][i] + h2 * (v2[j][i - 1] + v2[j][i + 1]) + k2 * (v2[j - 1][i] + v2[j + 1][i]) + F(x[i / 2], y[i / 2]);
-				maxR += temp * temp;
+				tmp = A * v2[j][i] + h2 * (v2[j][i - 1] + v2[j][i + 1]) + k2 * (v2[j - 1][i] + v2[j + 1][i]);
+				double g = F(aa+i*h, cc+i*k);
+				tmp += g;
+				maxR += tmp * tmp;
 			}
 		}
 
@@ -878,22 +882,23 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 	Tab2->TopLeftHeaderCell->Value = "Y/X";
 	Tab3->TopLeftHeaderCell->Value = "Y/X";
 
+	int q = 1; if (!FLAG) { q = 2; }
 	for (int i = 0; i <=n; i++)                        
 	{
-		Tab1->Columns[i]->HeaderCell->Value = (x[i]).ToString();
-		Tab2->Columns[i]->HeaderCell->Value = (x[i]).ToString();
-		Tab3->Columns[i]->HeaderCell->Value = (x[i]).ToString();
+		Tab1->Columns[i]->HeaderCell->Value = (x[i*q]).ToString();
+		Tab2->Columns[i]->HeaderCell->Value = (x[i*q]).ToString();
+		Tab3->Columns[i]->HeaderCell->Value = (x[i*q]).ToString();
 		
 	}
-	for (int j = 0; j <= m; j++)         
+	for (int j = 0; j <= m; j=j++)         
 	{
-		Tab1->Rows[j]->HeaderCell->Value = (y[j]).ToString();
-		Tab2->Rows[j]->HeaderCell->Value = (y[j]).ToString();
-		Tab3->Rows[j]->HeaderCell->Value = (y[j]).ToString();
+		Tab1->Rows[j]->HeaderCell->Value = (y[j*q]).ToString();
+		Tab2->Rows[j]->HeaderCell->Value = (y[j*q]).ToString();
+		Tab3->Rows[j]->HeaderCell->Value = (y[j*q]).ToString();
 	}
-	for (int j = 0; j <= m; j++)             
+	for (int j = 0; j <= m; j=j++)             
 	{
-		for (int i = 0; i <= n; i++)
+		for (int i = 0; i <= n; i=i++)
 		{
 			double a = round(v[i][j] * 1000) / 1000;
 			double b, c ,d;
