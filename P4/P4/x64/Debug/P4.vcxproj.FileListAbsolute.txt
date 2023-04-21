@@ -1,0 +1,4 @@
+D:\Git\LAB\P4\P4\x64\Debug\P4.vcxproj.AssemblyReference.cache
+D:\Git\LAB\P4\P4\x64\Debug\P4.vcxproj.SuggestedBindingRedirects.cache
+D:\Git\LAB\P4\P4\x64\Debug\P4.MyForm.resources
+D:\Git\LAB\P4\P4\x64\Debug\P4.vcxproj.GenerateResource.cache
