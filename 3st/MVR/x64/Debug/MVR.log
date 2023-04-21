@@ -1,0 +1,5 @@
+﻿  MyForm.cpp
+C:\tmp\gg\AA\Новая папка\F\MVR\MVR\MyForm.h(650,18): warning C4101: f: неиспользованная локальная переменная
+C:\tmp\gg\AA\Новая папка\F\MVR\MVR\MyForm.h(650,30): warning C4101: hv: неиспользованная локальная переменная
+  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  MVR.vcxproj -> C:\tmp\gg\AA\Новая папка\F\MVR\x64\Debug\MVR.exe
