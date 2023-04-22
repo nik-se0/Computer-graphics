@@ -1,0 +1,4 @@
+D:\Git\F\MVR\MVR\x64\Debug\MVR.vcxproj.AssemblyReference.cache
+D:\Git\F\MVR\MVR\x64\Debug\MVR.vcxproj.SuggestedBindingRedirects.cache
+D:\Git\F\MVR\MVR\x64\Debug\MVR.MyForm.resources
+D:\Git\F\MVR\MVR\x64\Debug\MVR.vcxproj.GenerateResource.cache
