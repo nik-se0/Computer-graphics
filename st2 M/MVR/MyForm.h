@@ -26,7 +26,7 @@ double mT(double x, double y) // GU
 }
 double fT(double x, double y) // test
 {
-	return 2*M_PI* M_PI* pow(M_E, sin(M_PI * x * y) * sin(M_PI * x * y))*(x*x+y*y)*(sin(2*x)*sin(2*x)/2+cos(2*x));
+	return 2.0*M_PI* M_PI* pow(M_E, sin(M_PI * x * y) * sin(M_PI * x * y))*(x*x+y*y)*(sin(M_PI*2.0*x*y)*sin(M_PI*2.0*x*y)/2.0+cos(M_PI*2*x*y));
 }
 double fO(double x, double y) // main
 {
@@ -60,24 +60,6 @@ double SCAL(double** a, double** b, int n, int m) {
 	}
 
 	return sum;
-
-}
-void swap(double** a, double** b)
-{
-	double** c = a;
-	a = b;
-	b = c;
-
-}
-void copy(double** a, double** b, int n, int m)
-{
-	for (int j = 0; j <= m; j++)
-	{
-		for (int i = 0; i <= n; i++)
-		{
-			a[i][j]=b[i][j];
-		}
-	}
 
 }
 
@@ -337,7 +319,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			   this->label9->Location = System::Drawing::Point(9, 93);
 			   this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			   this->label9->Name = L"label9";
-			   this->label9->Size = System::Drawing::Size(75, 20);
+			   this->label9->Size = System::Drawing::Size(66, 20);
 			   this->label9->TabIndex = 8;
 			   this->label9->Text = L"Nmax = ";
 			   // 
@@ -348,7 +330,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			   this->textBox6->Name = L"textBox6";
 			   this->textBox6->Size = System::Drawing::Size(132, 26);
 			   this->textBox6->TabIndex = 7;
-			   this->textBox6->Text = L"10";
+			   this->textBox6->Text = L"4";
 			   // 
 			   // textBox5
 			   // 
@@ -357,7 +339,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 			   this->textBox5->Name = L"textBox5";
 			   this->textBox5->Size = System::Drawing::Size(136, 26);
 			   this->textBox5->TabIndex = 6;
-			   this->textBox5->Text = L"10";
+			   this->textBox5->Text = L"4";
 			   // 
 			   // label8
 			   // 
@@ -690,102 +672,118 @@ private: System::Void radioButton5_CheckedChanged(System::Object^ sender, System
 	tabPage2->Text = L"V2 ( x , y )";
 	tabPage3->Text = L"| V2 ( x , y )-V ( x , y ) |";
 }
-private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 
-	int n, m, Nmax, p = 0, p2 = 0; //Текущее число итераций
-	double h2,k2, Eps, A, MaxPogr = 0.0, Pogr, R0 = 0.0, xMax = 0.0, yMax = 0.0, Rn = 0.0, MaxF2 = 0.0, maxR, Eps_max, Eps_max2, T = 0; //Параметр метода
+		int n, m, Nmax, p = 0, p2 = 0; //Текущее число итераций
+		double h2, k2, Eps, A, MaxPogr = 0.0, Pogr, R0 = 0.0, xMax = 0.0, yMax = 0.0, Rn = 0.0, R02 = 0.0, Rn2, Eps_max, Eps_max2, T = 0; //Параметр метода
 
-	//Определяем тип задачи
-	bool FLAG = 1; F = fT; //Тестовая задача
-	if (radioButton5->Checked) 
-	{ FLAG = 0; F=fO; } //Основаная задача
-
-	//Ввод данных
-	n = Convert::ToInt32(textBox5->Text);
-	m = Convert::ToInt32(textBox6->Text);
-	Nmax = Convert::ToInt32(textBox7->Text);
-	Eps = Convert::ToDouble(textBox8->Text);
-
-	//Инициализация переменных
-	aa = 0.0, bb = 1.0, cc = 0.0, dd = 1.0;
-	h = (bb-aa) / n, k = (dd-cc) / m;	 //Шаги по x и y
-	h2 = 1.0 / (h * h), k2 = 1.0 / (k * k);
-	A = -2 * (h2 + k2);
-
-	//Cоздание и заполение массивов
-	double** v = new double* [n + 1];	// Численное решение
-	double** u = new double* [n + 1];	// Истинное решение
-	double** R = new double* [n + 1];	// Невязка
-	double** v0 = new double* [n + 1];  // Рабочие массивы для метода
-	double** Ar = new double* [n + 1];
-	for (int i = 0; i <= n; i++)
-	{
-		v[i] = new double[m + 1];
-		u[i] = new double[m + 1];
-		R[i] = new double[m + 1];
-
-		v0[i] = new double[m + 1];
-		Ar[i] = new double[m + 1];
-
-		//Заполнение граничных условий в массив v
-		if (FLAG) { 
-			v[i][0] = mT(X(i), 0); 
-			v[i][m] = mT(X(i), 1);
-		}
-		else {
-			v[i][0] = mu3(X(i));
-			v[i][m] = mu4(X(i));
-		}
-	}
-	for (int j = 0; j <= m; j++)  
-	{	//Заполнение граничных условий в массив v
-		if (FLAG) {
-			v[0][j] = mT(0, Y(j));
-			v[n][j] = mT(1, Y(j));
-		}
-		else {
-			v[0][j] = mu1(Y(j));
-			v[n][j] = mu2(Y(j));
-		}
-	}
-	for (int j = 0; j <= m; j++)            
-	{	for (int i = 0; i <= n; i++)
+		//Определяем тип задачи
+		bool FLAG = 1; F = fT; //Тестовая задача
+		if (radioButton5->Checked)
 		{
-			if (FLAG)
-			{
-				u[i][j] = mT(X(i), Y(j));
+			FLAG = 0; F = fO;
+		} //Основаная задача
+
+//Ввод данных
+		n = Convert::ToInt32(textBox5->Text);
+		m = Convert::ToInt32(textBox6->Text);
+		Nmax = Convert::ToInt32(textBox7->Text);
+		Eps = Convert::ToDouble(textBox8->Text);
+
+		//Инициализация переменных
+		aa = 0.0, bb = 1.0, cc = 0.0, dd = 1.0;
+		h = (bb - aa) / n, k = (dd - cc) / m;	 //Шаги по x и y
+		h2 = 1.0 / (h * h), k2 = 1.0 / (k * k);
+		A = -2 * (h2 + k2);
+
+		//Cоздание и заполение массивов
+		double** v = new double* [n + 1];	// Численное решение
+		double** u = new double* [n + 1];	// Истинное решение
+		double** R = new double* [n + 1];	// Невязка
+		double** Ar = new double* [n + 1];  // Рабочие массивы для метода
+		
+		for (int i = 0; i <= n; i++)
+		{
+			v[i] = new double[m + 1];
+			u[i] = new double[m + 1];
+			R[i] = new double[m + 1];
+
+			Ar[i] = new double[m + 1];
+
+			//Заполнение граничных условий в массив v
+			if (FLAG) {
+				v[i][0] = mT(X(i), 0);
+				v[i][m] = mT(X(i), 1);
 			}
-			R[i][j] = F(X(i), Y(j));	// Подсчет невязки
-			R0 += F(X(i), Y(j)) * F(X(i), Y(j));
-
-			Ar[i][j] = 0;
+			else {
+				v[i][0] = mu3(X(i));
+				v[i][m] = mu4(X(i));
+			}
 		}
-	}
-	R0 = std::sqrt(R0);
-
-	//Нулевое начальное приближение
-	for (int j = 1; j < m; j++)    
-	{
-		for (int i = 1; i < n; i++)
+		for (int j = 0; j <= m; j++)
+		{	//Заполнение граничных условий в массив v
+			if (FLAG) {
+				v[0][j] = mT(0, Y(j));
+				v[n][j] = mT(1, Y(j));
+			}
+			else {
+				v[0][j] = mu1(Y(j));
+				v[n][j] = mu2(Y(j));
+			}
+		}
+		for (int j = 0; j <= m; j++)
 		{
-			v[i][j] = 0.0;
+			for (int i = 0; i <= n; i++)
+			{
+				if (FLAG)
+				{
+					u[i][j] = mT(X(i), Y(j));
+				}
+				R[i][j] = 0;
+				Ar[i][j] = 0;
+			}
 		}
-	}
 
-	// Подсчет тау(0)
-	for (int j = 1; j < m; j++)
-	{
-		for (int i = 1; i < n; i++)
+		//Нулевое начальное приближение
+		for (int j = 1; j < m; j++)
 		{
-			Ar[j][i] = A * R[j][i] + h2 * (R[j][i - 1] + R[j][i + 1]) + k2 * (R[j - 1][i] + R[j + 1][i]);
+			for (int i = 1; i < n; i++)
+			{
+				v[i][j] = 0.0;
+			}
 		}
-	}
-	T = SCAL(Ar, R, n, m) / SCAL(Ar, Ar, n, m);
 
-	//Метод минимальной невязки
+		//Метод минимальной невязки
+	double r0 = 0;
 	while (true)
 	{
-		swap(v0, v);
+		// Подсчет невязки
+		for (int j = 1; j < m; j++)
+		{
+			for (int i = 1; i < n; i++)
+			{
+				R[j][i] = A * v[j][i] + h2 * (v[j][i - 1] + v[j][i + 1]) + k2 * (v[j - 1][i] + v[j + 1][i]) + F(X(i), Y(j));
+				//R0 += F(X(i), Y(j)) * F(X(i), Y(j));
+				r0 = R[j][i] * R[j][i];
+
+			}
+		}
+		if (p == 0) {	//Нулевая невязка
+			R0 = std::sqrt(r0); }
+
+		if (p > Nmax-1) // Прекратить счет, если достигли критерия остановки
+			break;
+
+		// Подсчет тау(0)
+		for (int j = 1; j < m; j++)
+		{
+			for (int i = 1; i < n; i++)
+			{
+				Ar[j][i] = A * R[j][i] + h2 * (R[j][i - 1] + R[j][i + 1]) + k2 * (R[j - 1][i] + R[j + 1][i]);
+			}
+		}
+		T = SCAL(Ar, R, n, m) / SCAL(Ar, Ar, n, m);
+
 		Eps_max = 0.0;
 		for (int j = 1; j < m; j++)
 		{
@@ -800,88 +798,54 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 			}
 		}
 
-		p++; // Прекратить счет, если достигли критерия остановки
-		if ((Eps_max < Eps) || (p > Nmax)) 
+		p++; 
+		if (Eps_max < Eps) // Прекратить счет, если достигли критерия остановки
 			break;
-
-		//Подсчет параметра на следующую итерацию
-		for (int j = 1; j < m; j++)
-		{
-			for (int i = 1; i < n; i++)
-			{
-				R[j][j] = A * v0[j][i] + h2 * (v0[j][i - 1] + v0[j][i + 1]) + k2 * (v0[j - 1][i] + v0[j + 1][i]);
-			}
-		}
-		for (int j = 1; j < m; j++)
-		{
-			for (int i = 1; i < n; i++)
-			{
-				Ar[i][j] = A * R[i][j] + h2 * (R[j][i - 1] + R[j][i + 1]) + k2 * (R[j - 1][i] + R[j + 1][i]);
-			}
-		}
-		T = SCAL(Ar, R, n, m) / SCAL(Ar, Ar, n, m);
-
 	}
-	
-	//Вычисление невяки
-	for (int j = 1; j < m; j++)
-	{
-		for (int i = 1; i < n; i++)
-		{
-			Rn += R[i][j] * R[i][j];
-		}
-	}
-	Rn = std::sqrt(Rn);
+	Rn = std::sqrt(r0);
 
-	double** v2;
-	/*
-	if (!FLAG) {	//Решение с половинным шагом
+	double** v2; //Решение с половинным шагом
+	if (!FLAG) {	
 		n = 2 * n;
 		m = 2 * m;
-		double** v2 = new double* [n + 1];
-		x = new double[n + 1];
-		y = new double[m + 1];
-		f = new double* [n + 1];
-		R = new double* [n + 1];
+		p2 = 0; Rn2 = 0.0; R02 = 0;
 
-		h = (bb-aa) / n;
-		k = (dd-cc) / m;
-		h2 = 1.0 / (h * h);
-		k2 = 1.0 / (k * k);
+		double** v2 = new double* [n + 1];	// Численное решение
+		double** R = new double* [n + 1];	// Невязка
+		double** Ar = new double* [n + 1];  // Рабочие массивы для метода
+		
+		aa = 0.0, bb = 1.0, cc = 0.0, dd = 1.0;
+		h = (bb - aa) / n, k = (dd - cc) / m;	 
+		h2 = 1.0 / (h * h), k2 = 1.0 / (k * k);
 		A = -2 * (h2 + k2);
-		p2 = 0;
-		maxR = 0.0;
-
+		
 		for (int i = 0; i <= n; i++)
 		{
 			v2[i] = new double[m + 1];
-			f[i] = new double[m + 1];
 			R[i] = new double[m + 1];
-			X(i) = aa + i * h;
+			Ar[i] = new double[m + 1];
+
 			v2[i][0] = mu3(X(i));
 			v2[i][m] = mu4(X(i));
-			R[i][0] = 0.0;
-			R[i][m] = 0.0;
+
 		}
-		for (int j = 0; j <= m; j++)  
+		for (int j = 0; j <= m; j++)
 		{
-			Y(j) = cc + j * k;
 			v2[0][j] = mu1(Y(j));
 			v2[n][j] = mu2(Y(j));
-			R[0][j] = 0.0;
-			R[n][j] = 0.0;
+
 		}
-		MaxF2 = 0;
-		for (int j = 0; j <= m; j++)            
+		for (int j = 0; j <= m; j++)
 		{
 			for (int i = 0; i <= n; i++)
 			{
-				f[i][j] = F(X(i), Y(j));
-				MaxF2 += f[i][j] * f[i][j];
+				R[i][j] = 0;
+				Ar[i][j] = 0;
 			}
 		}
-		MaxF2 = sqrt(MaxF2);
-		for (int j = 1; j < m; j++)    //Нулевое начальное приближение
+
+		//Нулевое начальное приближение
+		for (int j = 1; j < m; j++)
 		{
 			for (int i = 1; i < n; i++)
 			{
@@ -889,49 +853,61 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 			}
 		}
 
-		tmp = 0.0;
-		prev = 0.0;
-		currE = 0.0;
-		T = 1;
+		//Метод минимальной невязки
+		double r0 = 0;
 		while (true)
 		{
+			// Подсчет невязки
+			for (int j = 1; j < m; j++)
+			{
+				for (int i = 1; i < n; i++)
+				{
+					R[j][i] = A * v2[j][i] + h2 * (v2[j][i - 1] + v2[j][i + 1]) + k2 * (v2[j - 1][i] + v2[j + 1][i]) + F(X(i), Y(j));
+					//R0 += F(X(i), Y(j)) * F(X(i), Y(j));
+					r0 = R[j][i] * R[j][i];
+
+				}
+			}
+			if (p == 0) {	//Нулевая невязка
+				R02 = std::sqrt(r0);
+			}
+
+			if (p2 > Nmax - 1) // Прекратить счет, если достигли критерия остановки
+				break;
+
+			// Подсчет тау(0)
+			for (int j = 1; j < m; j++)
+			{
+				for (int i = 1; i < n; i++)
+				{
+					Ar[j][i] = A * R[j][i] + h2 * (R[j][i - 1] + R[j][i + 1]) + k2 * (R[j - 1][i] + R[j + 1][i]);
+				}
+			}
+			T = SCAL(Ar, R, n, m) / SCAL(Ar, Ar, n, m);
+
 			Eps_max2 = 0.0;
 			for (int j = 1; j < m; j++)
 			{
 				for (int i = 1; i < n; i++)
 				{
-					prev = v2[j][i];
-					tmp = (A+1) * prev + h2 * (v2[j][i - 1] + v2[j][i + 1]) + k2 * (v2[j - 1][i] + v2[j + 1][i]);
-					v2[j][i] = T*tmp;
-					currE = std::fabs(v2[j][i] - prev);
+					double last = v2[j][i];
+					v2[j][i] = last - T * R[j][i];
+
+					double currE = std::fabs(v2[j][i] - last);
 					if (currE > Eps_max2)
 						Eps_max2 = currE;
 				}
 			}
 
 			p2++;
-			if ((Eps_max2 < Eps) || (p2 > Nmax))
+			if (Eps_max2 < Eps) // Прекратить счет, если достигли критерия остановки
 				break;
 		}
-
-		tmp = 0.0;
-		for (int j = 1; j < m; j++)
-		{
-			for (int i = 1; i < n; i++)
-			{
-				tmp = A * v2[j][i] + h2 * (v2[j][i - 1] + v2[j][i + 1]) + k2 * (v2[j - 1][i] + v2[j + 1][i]);
-				double g = F(aa+i*h, cc+i*k);
-				tmp += g;
-				maxR += tmp * tmp;
-			}
-		}
-
-		maxR = sqrt(maxR);
+		Rn2 = std::sqrt(r0);
 
 		n = n / 2;
 		m = m / 2;
 	}
-	*/
 
 	//Заполнение таблицы
 	Tab1->RowCount = n + 1; Tab1->ColumnCount = m + 1;
@@ -990,7 +966,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 	// Справка
 	if (FLAG) { label17->Text = Convert::ToString(p) + "\n" + Convert::ToString(Eps_max) + "\n" + "Нулелвое" + "\n" + Convert::ToString(R0) + "\n" + Convert::ToString(Rn) + "\n" + Convert::ToString(MaxPogr) + "\n\n" + Convert::ToString(xMax) + "\n" + Convert::ToString(yMax); }
 	else {
-		label17->Text = Convert::ToString(p) + "\n" + Convert::ToString(Eps_max) + "\n" + Convert::ToString(R0) + "\n" + Convert::ToString(Rn) + "\n" + Convert::ToString(p2) + "\n" + Convert::ToString(Eps_max2) + "\n" + Convert::ToString(MaxF2) + "\n" + Convert::ToString(maxR) + "\n" + Convert::ToString(MaxPogr) + "\n" + Convert::ToString(xMax) + "\n" + Convert::ToString(yMax);
+		label17->Text = Convert::ToString(p) + "\n" + Convert::ToString(Eps_max) + "\n" + Convert::ToString(R0) + "\n" + Convert::ToString(Rn) + "\n" + Convert::ToString(p2) + "\n" + Convert::ToString(Eps_max2) + "\n" + Convert::ToString(R02) + "\n" + Convert::ToString(Rn2) + "\n" + Convert::ToString(MaxPogr) + "\n" + Convert::ToString(xMax) + "\n" + Convert::ToString(yMax);
 
 	}
 

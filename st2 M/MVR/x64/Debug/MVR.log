@@ -1,6 +1,4 @@
 ﻿  MyForm.cpp
-D:\Git\F\MVR\MVR\MyForm.h(973): warning C4700: использована неинициализированная локальная переменная "v2"
-D:\Git\F\MVR\MVR\MyForm.h(993): warning C4700: использована неинициализированная локальная переменная "maxR"
-D:\Git\F\MVR\MVR\MyForm.h(993): warning C4700: использована неинициализированная локальная переменная "Eps_max2"
+D:\Git\F\st2 M\MVR\MyForm.h(949): warning C4700: использована неинициализированная локальная переменная "v2"
   MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
-  MVR.vcxproj -> D:\Git\F\MVR\x64\Debug\MVR.exe
+  MVR.vcxproj -> D:\Git\F\st2 M\x64\Debug\MVR.exe
