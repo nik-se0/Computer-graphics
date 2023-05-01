@@ -11,11 +11,12 @@
 std::function<double(double, double)> F;
 double mT(double x, double y) // GU
 {
-	return pow(M_E, sin(M_PI * x * y)* sin(M_PI * x * y));
+	return -pow(M_E, sin(M_PI * x * y)* sin(M_PI * x * y));
 }
 double fT(double x, double y) // test
 {
-	return 2*M_PI* M_PI* pow(M_E, sin(M_PI * x * y) * sin(M_PI * x * y))*(x*x+y*y)*(sin(2*x)*sin(2*x)/2+cos(2*x));
+	//return 2*M_PI* M_PI* pow(M_E, sin(M_PI * x * y) * sin(M_PI * x * y))*(x*x+y*y)*(sin(2*x)*sin(2*x)/2+cos(2*x));
+	return  -0.5 * M_PI * M_PI * (x * x + y * y) * pow(M_E, sin(M_PI * x * y) * sin(M_PI * x * y)) * (-4 * cos(2 * M_PI * x * y) + cos(4 * M_PI * x * y) - 1);
 }
 double fO(double x, double y) // main
 {
@@ -751,7 +752,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 			{
 				prev = v[j][i];
 				tmp = A * prev + h2 * (v[j][i - 1] + v[j][i + 1]) + k2 * (v[j - 1][i] + v[j + 1][i]);
-				v[j][i] = prev - w * (tmp + F(x[i], y[i])) / A;
+				v[j][i] = prev - w * (tmp + F(x[i], y[j])) / A;
 
 				currentEps = std::fabs(v[j][i] - prev);
 				if (currentEps > Eps_max)
@@ -769,7 +770,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 	{
 		for (int i = 1; i < n; i++)
 		{
-			tmp = A * v[j][i] + h2 * (v[j][i - 1] + v[j][i + 1]) + k2 * (v[j - 1][i] + v[j + 1][i]) + F(x[i], y[i]);
+			tmp = A * v[j][i] + h2 * (v[j][i - 1] + v[j][i + 1]) + k2 * (v[j - 1][i] + v[j + 1][i]) + F(x[i], y[j]);
 			maxR1 += tmp * tmp;
 		}
 	}
