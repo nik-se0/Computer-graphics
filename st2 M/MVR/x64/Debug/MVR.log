@@ -1,4 +1,3 @@
 ﻿  MyForm.cpp
-D:\Git\F\st2 M\MVR\MyForm.h(949): warning C4700: использована неинициализированная локальная переменная "v2"
   MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
-  MVR.vcxproj -> D:\Git\F\st2 M\x64\Debug\MVR.exe
+  MVR.vcxproj -> C:\Users\msoko\Desktop\мучения от Вероники\Новая папка\3\F\st2 M\x64\Debug\MVR.exe
