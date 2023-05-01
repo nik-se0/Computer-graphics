@@ -916,8 +916,8 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 				c = x[2 * i]; d= y[2 * j];
 			}
 
-			Tab1->Rows[j]->Cells[i]->Value = a;
-			Tab2->Rows[j]->Cells[i]->Value = b;
+			Tab1->Rows[j]->Cells[i]->Value = abs(a);
+			Tab2->Rows[j]->Cells[i]->Value = abs(b);
 			Tab3->Rows[j]->Cells[i]->Value = Pogr;
 			if (Pogr > MaxPogr)
 			{
