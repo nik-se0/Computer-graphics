@@ -1,0 +1,92 @@
+C:\Users\Руслан\Documents\Visual Studio 2015\Projects\Tomogramma1\Tomogramma1\bin\Debug\Tomogramma1.exe.config
+C:\Users\Руслан\Documents\Visual Studio 2015\Projects\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.Form1.resources
+C:\Users\Руслан\Documents\Visual Studio 2015\Projects\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.Properties.Resources.resources
+C:\Users\Руслан\Documents\Visual Studio 2015\Projects\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.csproj.GenerateResource.Cache
+C:\Users\Руслан\Documents\Visual Studio 2015\Projects\Tomogramma1\Tomogramma1\bin\Debug\Tomogramma1.exe
+C:\Users\Руслан\Documents\Visual Studio 2015\Projects\Tomogramma1\Tomogramma1\bin\Debug\Tomogramma1.pdb
+C:\Users\Руслан\Documents\Visual Studio 2015\Projects\Tomogramma1\Tomogramma1\bin\Debug\OpenTK.dll
+C:\Users\Руслан\Documents\Visual Studio 2015\Projects\Tomogramma1\Tomogramma1\bin\Debug\OpenTK.GLControl.dll
+C:\Users\Руслан\Documents\Visual Studio 2015\Projects\Tomogramma1\Tomogramma1\bin\Debug\OpenTK.pdb
+C:\Users\Руслан\Documents\Visual Studio 2015\Projects\Tomogramma1\Tomogramma1\bin\Debug\OpenTK.xml
+C:\Users\Руслан\Documents\Visual Studio 2015\Projects\Tomogramma1\Tomogramma1\bin\Debug\OpenTK.GLControl.xml
+C:\Users\Руслан\Documents\Visual Studio 2015\Projects\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.exe
+C:\Users\Руслан\Documents\Visual Studio 2015\Projects\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.pdb
+C:\Users\Руслан\Documents\Visual Studio 2015\Projects\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.csprojResolveAssemblyReference.cache
+F:\Tomogramma1\Tomogramma1\bin\Debug\Tomogramma1.exe.config
+F:\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.exe
+F:\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.pdb
+F:\Tomogramma1\Tomogramma1\bin\Debug\Tomogramma1.exe
+F:\Tomogramma1\Tomogramma1\bin\Debug\Tomogramma1.pdb
+F:\Tomogramma1\Tomogramma1\bin\Debug\OpenTK.dll
+F:\Tomogramma1\Tomogramma1\bin\Debug\OpenTK.GLControl.dll
+F:\Tomogramma1\Tomogramma1\bin\Debug\OpenTK.pdb
+F:\Tomogramma1\Tomogramma1\bin\Debug\OpenTK.xml
+F:\Tomogramma1\Tomogramma1\bin\Debug\OpenTK.GLControl.xml
+F:\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.csprojResolveAssemblyReference.cache
+F:\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.Form1.resources
+F:\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.Properties.Resources.resources
+F:\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\Несданные лабы АиСД и КГ\Tomogramma1\Tomogramma1\bin\Debug\Tomogramma1.exe.config
+C:\Users\user\Desktop\Несданные лабы АиСД и КГ\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.exe
+C:\Users\user\Desktop\Несданные лабы АиСД и КГ\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.pdb
+C:\Users\Anton\Desktop\Несданные лабы АиСД и КГ\Tomogramma1\Tomogramma1\bin\Debug\Tomogramma1.exe.config
+C:\Users\Anton\Desktop\Несданные лабы АиСД и КГ\Tomogramma1\Tomogramma1\bin\Debug\Tomogramma1.exe
+C:\Users\Anton\Desktop\Несданные лабы АиСД и КГ\Tomogramma1\Tomogramma1\bin\Debug\Tomogramma1.pdb
+C:\Users\Anton\Desktop\Несданные лабы АиСД и КГ\Tomogramma1\Tomogramma1\bin\Debug\OpenTK.pdb
+C:\Users\Anton\Desktop\Несданные лабы АиСД и КГ\Tomogramma1\Tomogramma1\bin\Debug\OpenTK.xml
+C:\Users\Anton\Desktop\Несданные лабы АиСД и КГ\Tomogramma1\Tomogramma1\bin\Debug\OpenTK.GLControl.xml
+C:\Users\Anton\Desktop\Несданные лабы АиСД и КГ\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.csprojAssemblyReference.cache
+C:\Users\Anton\Desktop\Несданные лабы АиСД и КГ\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.Form1.resources
+C:\Users\Anton\Desktop\Несданные лабы АиСД и КГ\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.Properties.Resources.resources
+C:\Users\Anton\Desktop\Несданные лабы АиСД и КГ\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.csproj.GenerateResource.cache
+C:\Users\Anton\Desktop\Несданные лабы АиСД и КГ\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.csproj.CoreCompileInputs.cache
+C:\Users\Anton\Desktop\Несданные лабы АиСД и КГ\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.csproj.CopyComplete
+C:\Users\Anton\Desktop\Несданные лабы АиСД и КГ\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.exe
+C:\Users\Anton\Desktop\Несданные лабы АиСД и КГ\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.pdb
+C:\Users\Anton\Desktop\LABS\графика лабы\2\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.csprojAssemblyReference.cache
+C:\Users\Anton\Desktop\LABS\графика лабы\2\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.Form1.resources
+C:\Users\Anton\Desktop\LABS\графика лабы\2\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.Properties.Resources.resources
+C:\Users\Anton\Desktop\LABS\графика лабы\2\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.csproj.GenerateResource.cache
+C:\Users\Anton\Desktop\LABS\графика лабы\2\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.csproj.CoreCompileInputs.cache
+C:\Users\Anton\Desktop\LABS\графика лабы\2\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.exe
+C:\Users\Anton\Desktop\LABS\графика лабы\2\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.pdb
+C:\Users\Anton\Desktop\LABS\графика лабы\2\Tomogramma1\Tomogramma1\bin\Debug\Tomogramma1.exe.config
+C:\Users\Anton\Desktop\LABS\графика лабы\2\Tomogramma1\Tomogramma1\bin\Debug\Tomogramma1.exe
+C:\Users\Anton\Desktop\LABS\графика лабы\2\Tomogramma1\Tomogramma1\bin\Debug\Tomogramma1.pdb
+C:\Users\Anton\Desktop\LABS\графика лабы\2\Tomogramma1\Tomogramma1\bin\Debug\OpenTK.pdb
+C:\Users\Anton\Desktop\LABS\графика лабы\2\Tomogramma1\Tomogramma1\bin\Debug\OpenTK.xml
+C:\Users\Anton\Desktop\LABS\графика лабы\2\Tomogramma1\Tomogramma1\bin\Debug\OpenTK.GLControl.xml
+C:\Users\Anton\Desktop\LABS\графика лабы\2\Tomogramma1\Tomogramma1\obj\Debug\Tomogramma1.csproj.CopyComplete
+D:\#1\OneDrive\Файлы с учебы\Документы\1_Временно необходимое барахло\КГ\КОМПЬЮТЕРНАЯ ГРАФИКА\КОМПЬЮТЕРНАЯ ГРАФИКА\2\CG-2\Tomogramma1\bin\Debug\Tomogramma1.exe.config
+D:\#1\OneDrive\Файлы с учебы\Документы\1_Временно необходимое барахло\КГ\КОМПЬЮТЕРНАЯ ГРАФИКА\КОМПЬЮТЕРНАЯ ГРАФИКА\2\CG-2\Tomogramma1\bin\Debug\Tomogramma1.exe
+D:\#1\OneDrive\Файлы с учебы\Документы\1_Временно необходимое барахло\КГ\КОМПЬЮТЕРНАЯ ГРАФИКА\КОМПЬЮТЕРНАЯ ГРАФИКА\2\CG-2\Tomogramma1\bin\Debug\Tomogramma1.pdb
+D:\#1\OneDrive\Файлы с учебы\Документы\1_Временно необходимое барахло\КГ\КОМПЬЮТЕРНАЯ ГРАФИКА\КОМПЬЮТЕРНАЯ ГРАФИКА\2\CG-2\Tomogramma1\bin\Debug\OpenTK.pdb
+D:\#1\OneDrive\Файлы с учебы\Документы\1_Временно необходимое барахло\КГ\КОМПЬЮТЕРНАЯ ГРАФИКА\КОМПЬЮТЕРНАЯ ГРАФИКА\2\CG-2\Tomogramma1\bin\Debug\OpenTK.xml
+D:\#1\OneDrive\Файлы с учебы\Документы\1_Временно необходимое барахло\КГ\КОМПЬЮТЕРНАЯ ГРАФИКА\КОМПЬЮТЕРНАЯ ГРАФИКА\2\CG-2\Tomogramma1\bin\Debug\OpenTK.GLControl.xml
+D:\#1\OneDrive\Файлы с учебы\Документы\1_Временно необходимое барахло\КГ\КОМПЬЮТЕРНАЯ ГРАФИКА\КОМПЬЮТЕРНАЯ ГРАФИКА\2\CG-2\Tomogramma1\obj\Debug\Tomogramma1.csproj.AssemblyReference.cache
+D:\#1\OneDrive\Файлы с учебы\Документы\1_Временно необходимое барахло\КГ\КОМПЬЮТЕРНАЯ ГРАФИКА\КОМПЬЮТЕРНАЯ ГРАФИКА\2\CG-2\Tomogramma1\obj\Debug\Tomogramma1.csproj.SuggestedBindingRedirects.cache
+D:\#1\OneDrive\Файлы с учебы\Документы\1_Временно необходимое барахло\КГ\КОМПЬЮТЕРНАЯ ГРАФИКА\КОМПЬЮТЕРНАЯ ГРАФИКА\2\CG-2\Tomogramma1\obj\Debug\Tomogramma1.Form1.resources
+D:\#1\OneDrive\Файлы с учебы\Документы\1_Временно необходимое барахло\КГ\КОМПЬЮТЕРНАЯ ГРАФИКА\КОМПЬЮТЕРНАЯ ГРАФИКА\2\CG-2\Tomogramma1\obj\Debug\Tomogramma1.Properties.Resources.resources
+D:\#1\OneDrive\Файлы с учебы\Документы\1_Временно необходимое барахло\КГ\КОМПЬЮТЕРНАЯ ГРАФИКА\КОМПЬЮТЕРНАЯ ГРАФИКА\2\CG-2\Tomogramma1\obj\Debug\Tomogramma1.csproj.GenerateResource.cache
+D:\#1\OneDrive\Файлы с учебы\Документы\1_Временно необходимое барахло\КГ\КОМПЬЮТЕРНАЯ ГРАФИКА\КОМПЬЮТЕРНАЯ ГРАФИКА\2\CG-2\Tomogramma1\obj\Debug\Tomogramma1.csproj.CoreCompileInputs.cache
+D:\#1\OneDrive\Файлы с учебы\Документы\1_Временно необходимое барахло\КГ\КОМПЬЮТЕРНАЯ ГРАФИКА\КОМПЬЮТЕРНАЯ ГРАФИКА\2\CG-2\Tomogramma1\obj\Debug\Tomogramma1.csproj.CopyComplete
+D:\#1\OneDrive\Файлы с учебы\Документы\1_Временно необходимое барахло\КГ\КОМПЬЮТЕРНАЯ ГРАФИКА\КОМПЬЮТЕРНАЯ ГРАФИКА\2\CG-2\Tomogramma1\obj\Debug\Tomogramma1.exe
+D:\#1\OneDrive\Файлы с учебы\Документы\1_Временно необходимое барахло\КГ\КОМПЬЮТЕРНАЯ ГРАФИКА\КОМПЬЮТЕРНАЯ ГРАФИКА\2\CG-2\Tomogramma1\obj\Debug\Tomogramma1.pdb
+D:\Git\#work\KG-2\Tomogramma1\bin\Debug\Tomogramma1.exe.config
+D:\Git\#work\KG-2\Tomogramma1\bin\Debug\Tomogramma1.exe
+D:\Git\#work\KG-2\Tomogramma1\bin\Debug\Tomogramma1.pdb
+D:\Git\#work\KG-2\Tomogramma1\bin\Debug\OpenTK.dll
+D:\Git\#work\KG-2\Tomogramma1\bin\Debug\OpenTK.GLControl.dll
+D:\Git\#work\KG-2\Tomogramma1\bin\Debug\OpenTK.pdb
+D:\Git\#work\KG-2\Tomogramma1\bin\Debug\OpenTK.xml
+D:\Git\#work\KG-2\Tomogramma1\bin\Debug\OpenTK.dll.config
+D:\Git\#work\KG-2\Tomogramma1\bin\Debug\OpenTK.GLControl.xml
+D:\Git\#work\KG-2\Tomogramma1\obj\Debug\Tomogramma1.csproj.AssemblyReference.cache
+D:\Git\#work\KG-2\Tomogramma1\obj\Debug\Tomogramma1.csproj.SuggestedBindingRedirects.cache
+D:\Git\#work\KG-2\Tomogramma1\obj\Debug\Tomogramma1.Form1.resources
+D:\Git\#work\KG-2\Tomogramma1\obj\Debug\Tomogramma1.Properties.Resources.resources
+D:\Git\#work\KG-2\Tomogramma1\obj\Debug\Tomogramma1.csproj.GenerateResource.cache
+D:\Git\#work\KG-2\Tomogramma1\obj\Debug\Tomogramma1.csproj.CoreCompileInputs.cache
+D:\Git\#work\KG-2\Tomogramma1\obj\Debug\Tomogramma1.csproj.CopyComplete
+D:\Git\#work\KG-2\Tomogramma1\obj\Debug\Tomogramma1.exe
+D:\Git\#work\KG-2\Tomogramma1\obj\Debug\Tomogramma1.pdb
