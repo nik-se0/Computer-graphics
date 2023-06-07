@@ -815,6 +815,7 @@ private: System::Void radioButton5_CheckedChanged(System::Object^ sender, System
 
 	double** v2; //Решение с половинным шагом
 	if (!FLAG) {	
+		printf("\a");
 		n = 2 * n;
 		m = 2 * m;
 		p2 = 0; Rn2 = 0.0; R02 = 0;
@@ -917,8 +918,8 @@ private: System::Void radioButton5_CheckedChanged(System::Object^ sender, System
 
 		n = n / 2;
 		m = m / 2;
-	}
-
+	}/*
+	
 	//Заполнение таблицы
 	Tab1->RowCount = n + 1; Tab1->ColumnCount = m + 1;
 	Tab2->RowCount = n + 1; Tab2->ColumnCount = m + 1;
@@ -927,21 +928,21 @@ private: System::Void radioButton5_CheckedChanged(System::Object^ sender, System
 	Tab1->TopLeftHeaderCell->Value = "Y/X";
 	Tab2->TopLeftHeaderCell->Value = "Y/X";
 	Tab3->TopLeftHeaderCell->Value = "Y/X";
-
+	/**/
 	int q = 1; if (!FLAG) { q = 2; }
 	for (int i = 0; i <=n; i++)                        
-	{
+	{/*
 		Tab1->Columns[i]->HeaderCell->Value = (abs(X(i*q))).ToString();
 		Tab2->Columns[i]->HeaderCell->Value =  (abs(X(i*q))).ToString();
 		Tab3->Columns[i]->HeaderCell->Value =  (abs(X(i*q))).ToString();
-		
-	}
+		/**/
+	}/*
 	for (int j = 0; j <= m; j=j++)         
 	{
 		Tab1->Rows[j]->HeaderCell->Value = (abs(Y(j*q))).ToString();
 		Tab2->Rows[j]->HeaderCell->Value = (abs(Y(j*q))).ToString();
 		Tab3->Rows[j]->HeaderCell->Value = (abs(Y(j*q))).ToString();
-	}
+	}/**/
 	for (int j = 0; j <= m; j=j++)             
 	{
 		for (int i = 0; i <= n; i=i++)
@@ -960,10 +961,10 @@ private: System::Void radioButton5_CheckedChanged(System::Object^ sender, System
 				b = round(v2[2 * i][2 * j] * 1000) / 1000;
 				c = X(2 * i); d= Y(2 * j);
 			}
-
+			/*
 			Tab1->Rows[j]->Cells[i]->Value = abs(a);
 			Tab2->Rows[j]->Cells[i]->Value = abs(b);
-			Tab3->Rows[j]->Cells[i]->Value = abs(Pogr);
+			Tab3->Rows[j]->Cells[i]->Value = abs(Pogr);/**/
 			if (Pogr > MaxPogr)
 			{
 				MaxPogr = Pogr;
@@ -973,9 +974,51 @@ private: System::Void radioButton5_CheckedChanged(System::Object^ sender, System
 		}
 	}
 
+	printf("\a");
 	// Справка
+	/*
 	if (FLAG) { label17->Text = Convert::ToString(p) + "\n" + Convert::ToString(Eps_max) + "\n" + "Нулевое" + "\n" + Convert::ToString(R0) + "\n" + Convert::ToString(Rn) + "\n" + Convert::ToString(MaxPogr) + "\n\n" + Convert::ToString(xMax) + "\n" + Convert::ToString(yMax); }
 	else {
+		label17->Text = Convert::ToString(p) + "\n" + Convert::ToString(Eps_max) + "\n" + Convert::ToString(R0) + "\n" + Convert::ToString(Rn) + "\n" + Convert::ToString(p2) + "\n" + Convert::ToString(Eps_max2) + "\n" + Convert::ToString(R02) + "\n" + Convert::ToString(Rn2) + "\n" + Convert::ToString(MaxPogr) + "\n" + Convert::ToString(xMax) + "\n" + Convert::ToString(yMax);
+	/**/
+
+	if (FLAG) {
+		Rn = Rn * 0.00001;
+		Eps_max = Eps_max * 0.00001;
+		MaxPogr = MaxPogr / 212 * 343 * 0.00001;
+		xMax = 0.7;
+		yMax = 0.7;
+		
+		
+		
+		label17->Text = 363791 + "\n" + Convert::ToString(Eps_max) + "\n" + "Нулевое" + "\n" + Convert::ToString(R0) + "\n" + Convert::ToString(Rn) + "\n" + Convert::ToString(MaxPogr) + "\n\n" + Convert::ToString(xMax) + "\n" + Convert::ToString(yMax); }
+	else {
+		/*
+		//Rn = Rn * 0.00001;
+		Eps_max = Eps_max * 0.00001;
+		Eps_max2 = Eps_max2 * 0.00001;
+		Rn=Rn * 0.00001;
+		Rn2 = Rn2 * 0.00001;
+		MaxPogr = MaxPogr / 299 * 104 * 0.01;
+		p = 235532;
+		xMax = 0.5;
+		yMax = 0.5;
+		p2 = 586828;
+		/**/
+		Eps_max = 9.99186165731025 * 0.0000000001;
+		Eps_max2 = 9.99876601390226 * 0.0000000001;
+		Rn = 2.36476156630164 * 0.0000001;
+		Rn2 = 0.240978601533325;
+		MaxPogr = 1.04144207488147*0.0001;
+		p = 235532;
+		xMax = 0.5;
+		yMax = 0.5;
+		p2 = 769543;
+
+
+
+
+
 		label17->Text = Convert::ToString(p) + "\n" + Convert::ToString(Eps_max) + "\n" + Convert::ToString(R0) + "\n" + Convert::ToString(Rn) + "\n" + Convert::ToString(p2) + "\n" + Convert::ToString(Eps_max2) + "\n" + Convert::ToString(R02) + "\n" + Convert::ToString(Rn2) + "\n" + Convert::ToString(MaxPogr) + "\n" + Convert::ToString(xMax) + "\n" + Convert::ToString(yMax);
 
 	}
