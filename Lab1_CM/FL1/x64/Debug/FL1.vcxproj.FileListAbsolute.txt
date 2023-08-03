@@ -1,4 +1,0 @@
-D:\Git\LAB\FL1\FL1\x64\Debug\FL1.vcxproj.AssemblyReference.cache
-D:\Git\LAB\FL1\FL1\x64\Debug\FL1.vcxproj.SuggestedBindingRedirects.cache
-D:\Git\LAB\FL1\FL1\x64\Debug\FL1.MyForm.resources
-D:\Git\LAB\FL1\FL1\x64\Debug\FL1.vcxproj.GenerateResource.cache
