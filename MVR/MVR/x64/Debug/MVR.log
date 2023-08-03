@@ -1,4 +1,0 @@
-﻿  MyForm.cpp
-C:\home\lena\учеба\чм\lr2\3\F\MVR\MVR\MyForm.h(669,7): warning C4101: buffer: неиспользованная локальная переменная
-  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
-  MVR.vcxproj -> C:\home\lena\учеба\чм\lr2\3\F\MVR\x64\Debug\MVR.exe
