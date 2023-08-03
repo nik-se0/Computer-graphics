@@ -1,4 +1,0 @@
-C:\tmp\gg\AA\Новая папка\F\MVR\MVR\x64\Debug\MVR.vcxproj.AssemblyReference.cache
-C:\tmp\gg\AA\Новая папка\F\MVR\MVR\x64\Debug\MVR.vcxproj.SuggestedBindingRedirects.cache
-C:\tmp\gg\AA\Новая папка\F\MVR\MVR\x64\Debug\MVR.MyForm.resources
-C:\tmp\gg\AA\Новая папка\F\MVR\MVR\x64\Debug\MVR.vcxproj.GenerateResource.cache
